@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button } from "./Button";
 
-export const Counter = () => {
-  let [number, setNumber] = useState(0);
+interface TProps {
+  number: number;
+  setNumber: (value: number) => void;
+}
 
-  useEffect(() => {
-    console.log(number);
-  }, [number]);
-
+export const Counter: FC<TProps> = ({ number, setNumber }): JSX.Element => {
   return (
     <>
       <Button nomeButton={"ADD"} onClick={() => setNumber(number + 1)} />
