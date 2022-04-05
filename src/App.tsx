@@ -6,10 +6,6 @@ import { DatiFetch } from "./Components/DatiFetch";
 function App() {
   const [number, setNumber] = useState(0);
 
-  useEffect(() => {
-    console.log("Roberto");
-  }, []);
-
   return (
     <div className="App">
       <DatiFetch />
