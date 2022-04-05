@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FetchButton } from "./FetchButton";
 import { SelectBool } from "./SelectBool";
 
@@ -52,6 +53,10 @@ export const DatiFetch: FC = (): JSX.Element => {
 
       <SelectBool onChange={(e: any) => handleInput(e)} />
       {lista && <ul>{renderData}</ul>}
+
+      <br />
+      <br />
+     
     </>
   );
 };

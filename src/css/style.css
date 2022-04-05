@@ -1,0 +1,11 @@
+h1 {
+  margin: 0;
+}
+.preferitiBox {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+}
