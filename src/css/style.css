@@ -9,3 +9,7 @@ h1 {
   left: 0;
   right: 0;
 }
+
+ul{
+  list-style: none;
+}

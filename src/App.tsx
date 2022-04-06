@@ -4,6 +4,7 @@ import { Home } from "./Components/Home";
 import { Route, Routes } from "react-router-dom";
 import { Preferiti } from "./Components/Preferiti";
 import "./css/style.css";
+import { Todo } from "./Components/Todo";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         />
         <Route path="/fetching" element={<DatiFetch />} />
         <Route path="/preferiti" element={<Preferiti />} />
+        <Route path="/todo" element={<Todo />} />
+        
       </Routes>
     </main>
   );
