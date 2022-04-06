@@ -10,6 +10,31 @@ h1 {
   right: 0;
 }
 
-ul{
+ul {
   list-style: none;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+}
+button {
+  background-color: white;
+  border: solid 1px black;
+  height: 20px;
+  margin: 1px;
+
+  border-radius: 3px;
+}
+
+p {
+  padding: 5px;
+}
+
+.star {
+  color: orange;
+}
+
+button:hover {
+  background-color: rgb(218, 218, 218);
 }

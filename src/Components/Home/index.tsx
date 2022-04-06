@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Home: FC = (): JSX.Element => {
   return (
-    <div>
+    <div className="element">
       <p>Scegli componente:</p>
       <Link to="counter">
         <button>Contatore</button>
@@ -12,14 +12,15 @@ export const Home: FC = (): JSX.Element => {
         {" "}
         <button>Fetching</button>
       </Link>
-      <Link to="preferiti">
-        {" "}
-        <button>Preferiti</button>
-      </Link>
       <Link to="todo">
         {" "}
         <button>Todo-list</button>
       </Link>
+      <Link to="preferiti">
+        {" "}
+        <button> Preferiti <span className="star">⭑</span></button>
+      </Link>
+    
     </div>
   );
 };

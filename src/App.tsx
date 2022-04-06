@@ -6,7 +6,7 @@ import { Preferiti } from "./Components/Preferiti";
 import "./css/style.css";
 import { Todo } from "./Components/Todo";
 
-function App() {
+function App(): JSX.Element {
   return (
     <main>
       <Routes>
@@ -18,7 +18,6 @@ function App() {
         <Route path="/fetching" element={<DatiFetch />} />
         <Route path="/preferiti" element={<Preferiti />} />
         <Route path="/todo" element={<Todo />} />
-        
       </Routes>
     </main>
   );
