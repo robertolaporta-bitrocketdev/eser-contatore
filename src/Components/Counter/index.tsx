@@ -1,13 +1,8 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC, useState } from "react";
 import { Button } from "./Button";
 
-interface TProps {
-  number: number;
-  setNumber: (value: number) => void;
-}
-
-export const Counter: FC<TProps> = ({ number, setNumber }): JSX.Element => {
+export const Counter: FC = (): JSX.Element => {
+  const [number, setNumber] = useState(0);
   return (
     <>
       <Button nomeButton={"ADD"} onClick={() => setNumber(number + 1)} />

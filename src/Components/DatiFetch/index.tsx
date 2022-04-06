@@ -1,5 +1,4 @@
-import { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { FC, useState } from "react";
 import { FetchButton } from "./FetchButton";
 import { SelectBool } from "./SelectBool";
 
@@ -56,7 +55,6 @@ export const DatiFetch: FC = (): JSX.Element => {
 
       <br />
       <br />
-     
     </>
   );
 };
