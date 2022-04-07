@@ -1,4 +1,6 @@
 import { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { FetchButton } from "./FetchButton";
 import { SelectBool } from "./SelectBool";
 
@@ -10,6 +12,7 @@ interface Data {
 }
 
 export const DatiFetch: FC = (): JSX.Element => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [lista, setLista] = useState(false);
   const [input, setInput] = useState();
@@ -37,11 +40,26 @@ export const DatiFetch: FC = (): JSX.Element => {
       <p>id: {item.id}</p>
       <p>title: {item.title}</p>
       <p>completed: {JSON.stringify(item.completed)}</p>
+      <button
+        onClick={() =>
+          dispatch({
+            type: "INSERT_DATA",
+            payload: {
+              id: item.id,
+              title: item.title,
+              completed: item.completed,
+            },
+          })
+        }
+      >
+        Metti nei preferiti
+      </button>
     </li>
   ));
 
   return (
     <>
+    <Link to="/preferiti"><button>Preferiti</button></Link>
       <FetchButton
         onClick={() => {
           fetching();
