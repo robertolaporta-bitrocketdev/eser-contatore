@@ -1,25 +1,40 @@
 export const initialState = {
-  city: "world",
   userData: {},
 };
 
-interface TStore {
-  city: string;
+export interface TStore {
   userData: {
-    userId?: number;
-    id?: number;
-    title?: string;
-    completed?: boolean;
+    [userID: string]: {
+      userId?: number;
+      id?: number;
+      title?: string;
+      completed?: boolean;
+    };
   };
 }
 
 export const rootReducer = (store = initialState, action: any): TStore => {
   switch (action.type) {
-    case "CHANGE_CITY":
-      return { ...store, city: action.payload };
+    case "INSERT_USER":
+      return {
+        ...store,
+        userData: {
+          ...store.userData,
+          [action.payload.id]: action.payload,
+        },
+      };
 
-    case "INSERT_DATA":
-      return { ...store, userData: action.payload };
+    case "TOTAL_RESET_DATA":
+      return { ...store, userData: {} };
+
+    case "DELETE_USER":
+      const newStore = { ...store };
+      newStore.userData = { ...store.userData };
+
+      // @ts-ignore
+      delete newStore.userData[action.payload];
+
+      return newStore;
   }
 
   return store;

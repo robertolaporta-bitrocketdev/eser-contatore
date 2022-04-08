@@ -1,0 +1,33 @@
+.purple {
+  color: rgb(115, 0, 255);
+}
+
+button {
+  border: 1px solid rgb(115, 0, 255);
+  color: rgb(115, 0, 255);
+  background-color: white;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+}
+
+select {
+  border: 1px solid rgb(115, 0, 255);
+  color: rgb(115, 0, 255);
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+}
+
+h1 {
+  color: rgb(115, 0, 255);
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(115, 0, 255);
+}
+select:hover {
+  color: white;
+  background-color: rgb(115, 0, 255);
+}

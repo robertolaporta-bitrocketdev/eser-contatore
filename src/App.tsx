@@ -3,6 +3,7 @@ import { DatiFetch } from "./Components/DatiFetch";
 import { Home } from "./Components/Home";
 import { Route, Routes } from "react-router-dom";
 import { Preferiti } from "./Components/Preferiti";
+import "./css/style.css"
 
 function App() {
   return (

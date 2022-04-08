@@ -35,31 +35,44 @@ export const DatiFetch: FC = (): JSX.Element => {
 
   const arrFilter = filterData();
   const renderData = arrFilter.map((item: Data) => (
+    
     <li key={item.id}>
-      <p>userId: {item.userId}</p>
-      <p>id: {item.id}</p>
-      <p>title: {item.title}</p>
-      <p>completed: {JSON.stringify(item.completed)}</p>
+      
+      <p>
+        userId: <span className="purple">{item.userId}</span>
+      </p>
+      <p>
+        id: <span className="purple">{item.id}</span>
+      </p>
+      <p>
+        title: <span className="purple">{item.title}</span>
+      </p>
+      <p>
+        completed:{" "}
+        <span className="purple">{JSON.stringify(item.completed)}</span>
+      </p>
       <button
-        onClick={() =>
+        onClick={() => {
           dispatch({
-            type: "INSERT_DATA",
+            type: "INSERT_USER",
             payload: {
               id: item.id,
               title: item.title,
               completed: item.completed,
             },
-          })
-        }
+          });
+        }}
       >
-        Metti nei preferiti
+        Preferito
       </button>
     </li>
   ));
 
   return (
     <>
-    <Link to="/preferiti"><button>Preferiti</button></Link>
+      <Link to="/preferiti">
+        <button>Preferiti</button>
+      </Link>
       <FetchButton
         onClick={() => {
           fetching();
