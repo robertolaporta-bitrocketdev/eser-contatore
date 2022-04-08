@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { TStore } from "../../Redux/rootReducer";
+import { TStore } from "../../redux/rootReducer";
 
 const selectorUserList = (store: TStore) => {
   const userData = store.userData;
