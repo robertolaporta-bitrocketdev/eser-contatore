@@ -1,34 +1,64 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { TStore } from "../../Redux/rootReducer";
+
+const selectorUserList = (store: TStore) => {
+  const userData = store.userData;
+  return userData;
+};
 
 export const Preferiti: FC = (): JSX.Element => {
   const dispatch = useDispatch();
-  const city = useSelector((store: any) => store.city);
-  const userData = useSelector((store: any) => store.userData);
+  const objData = useSelector(selectorUserList);
+  const userList = Object.values(objData);
+
   return (
     <div className="preferitiBox">
       <h1>Preferiti</h1>
       <Link to={"/"}>
         <button>HOME</button>
       </Link>
-
-      {/* <p>`La più bella città del mondo è {city}`</p> */}
-      <br />
-      <h2>Dati utente:</h2>
-      <p>Id: {userData.id}</p>
-      <p>Title: {userData.title}</p>
-      <p>completed: {JSON.stringify(userData.completed)}</p>
       <button
         onClick={() =>
           dispatch({
-            type: "INSERT_DATA",
-            payload: {},
+            type: "TOTAL_RESET_DATA",
           })
         }
       >
-        Elimina
+        CLEAR ALL
       </button>
+      <br />
+
+      {userList.map((element, index) => (
+        <div key={element.id}>
+          <div>
+            <p>Utente {index + 1}:</p>
+            <p>
+              Id: <span className="purple">{element.id}</span>
+            </p>
+            <p>
+              Titolo: <span className="purple">{element.title}</span>
+            </p>
+            <p>
+              Completed:{" "}
+              <span className="purple">
+                {JSON.stringify(element.completed)}
+              </span>
+            </p>
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "DELETE_USER",
+                  payload: element.id,
+                })
+              }
+            >
+              Elimina
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
