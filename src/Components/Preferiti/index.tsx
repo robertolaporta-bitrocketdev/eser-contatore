@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { TStore } from "../../redux/rootReducer";
+import { TStore } from "../../Redux/rootReducer";
 
-const selectorUserList = (store: TStore) => {
+function selectorUserList(store: TStore) {
   const userData = store.userData;
   return userData;
-};
+}
 
 export const Preferiti: FC = (): JSX.Element => {
   const dispatch = useDispatch();
