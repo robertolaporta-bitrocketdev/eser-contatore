@@ -31,3 +31,10 @@ select:hover {
   color: white;
   background-color: rgb(115, 0, 255);
 }
+
+button:disabled{
+  color: rgb(182, 123, 255);
+  border: 1px solid rgb(182, 123, 255);
+  background-color: rgb(255, 255, 255);
+
+}
