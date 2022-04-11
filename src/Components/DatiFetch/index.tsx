@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { FetchButton } from "./FetchButton";
 import { SelectBool } from "./SelectBool";
+import { User } from "./User";
 
-interface Data {
+export interface Data {
   userId: number;
   id: number;
   title: string;
@@ -12,7 +12,6 @@ interface Data {
 }
 
 export const DatiFetch: FC = (): JSX.Element => {
-  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [lista, setLista] = useState(false);
   const [input, setInput] = useState();
@@ -35,37 +34,14 @@ export const DatiFetch: FC = (): JSX.Element => {
 
   const arrFilter = filterData();
   const renderData = arrFilter.map((item: Data) => (
-    
-    <li key={item.id}>
-      
-      <p>
-        userId: <span className="purple">{item.userId}</span>
-      </p>
-      <p>
-        id: <span className="purple">{item.id}</span>
-      </p>
-      <p>
-        title: <span className="purple">{item.title}</span>
-      </p>
-      <p>
-        completed:{" "}
-        <span className="purple">{JSON.stringify(item.completed)}</span>
-      </p>
-      <button
-        onClick={() => {
-          dispatch({
-            type: "INSERT_USER",
-            payload: {
-              id: item.id,
-              title: item.title,
-              completed: item.completed,
-            },
-          });
-        }}
-      >
-        Preferito
-      </button>
-    </li>
+    <User
+      key={item.id}
+      userId={item.userId}
+      id={item.id}
+      title={item.title}
+      completed={item.completed}
+      item={item}
+    />
   ));
 
   return (
