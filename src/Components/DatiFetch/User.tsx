@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Data } from ".";
 
 interface Props {
-  userId: number;
+  userId?: number;
   id: number;
   title: string;
   completed: boolean;
