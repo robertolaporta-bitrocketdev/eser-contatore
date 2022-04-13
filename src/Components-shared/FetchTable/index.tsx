@@ -8,7 +8,7 @@ import { Action } from "history";
 export const FetchTable: FC = (): JSX.Element => {
   const [dataSource, setDataSource] = useState([]);
   const [alreadySelectedRows, setAlreadySelectedRow] = useState<[Data]>();
-  const [recordList, setRecordList] = useState<[Data]>();
+  const [recordList, setRecordList] = useState<Data[]>([]);
   const data: Array<Data> = [];
 
   useState(() => {
@@ -16,6 +16,10 @@ export const FetchTable: FC = (): JSX.Element => {
       .then((response) => response.json())
       .then((json) => setDataSource(json));
   });
+
+  useEffect(() => {
+    console.log(recordList);
+  }, [recordList]);
 
   const columns = [
     {
@@ -82,9 +86,7 @@ export const FetchTable: FC = (): JSX.Element => {
       <Table
         rowSelection={{
           onSelect: (record: Data) => {
-            setRecordList([record]);
-            
-            console.log(recordList);
+            setRecordList([...recordList, record]);
           },
         }}
         columns={columns}
