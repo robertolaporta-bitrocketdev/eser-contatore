@@ -1,4 +1,4 @@
-.purple {
+/* .purple {
   color: rgb(115, 0, 255);
 }
 
@@ -25,16 +25,24 @@ h1 {
 
 button:hover {
   color: white;
-  background-color: rgb(115, 0, 255);
+  background-color: rgb(155, 73, 255);
 }
 select:hover {
   color: white;
-  background-color: rgb(115, 0, 255);
+  background-color: rgb(149, 62, 255);
 }
 
-button:disabled{
+button:disabled {
   color: rgb(182, 123, 255);
   border: 1px solid rgb(182, 123, 255);
   background-color: rgb(255, 255, 255);
+}
 
+button:disabled:hover {
+  color: rgb(155, 73, 255);
+} */
+
+button{
+padding:2px 17px;
+border: 1px solid rgb(88, 135, 255);
 }

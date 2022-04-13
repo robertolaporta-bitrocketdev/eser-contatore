@@ -1,3 +1,4 @@
+import { Button, Table } from "antd";
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { FetchButton } from "./FetchButton";
@@ -5,7 +6,8 @@ import { SelectBool } from "./SelectBool";
 import { User } from "./User";
 
 export interface Data {
-  userId: number;
+  key?:number
+  userId?: number;
   id: number;
   title: string;
   completed: boolean;
@@ -45,7 +47,9 @@ export const DatiFetch: FC = (): JSX.Element => {
   ));
 
   return (
-    <>
+    <><Link to="/fetchTable">
+    <button>Table</button>
+  </Link>
       <Link to="/preferiti">
         <button>Preferiti</button>
       </Link>
@@ -60,8 +64,7 @@ export const DatiFetch: FC = (): JSX.Element => {
       <SelectBool onChange={(e: any) => handleInput(e)} />
       {lista && <ul>{renderData}</ul>}
 
-      <br />
-      <br />
+     
     </>
   );
 };
