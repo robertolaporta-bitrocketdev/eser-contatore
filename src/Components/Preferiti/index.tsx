@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { TStore } from "../../redux/rootReducer";
 
-function selectorUserList(store: TStore) {
+export function selectorUserList(store: TStore) {
   const userData = store.userData;
   return userData;
 }
