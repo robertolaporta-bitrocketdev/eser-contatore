@@ -42,7 +42,11 @@ button:disabled:hover {
   color: rgb(155, 73, 255);
 } */
 
-button{
-padding:2px 17px;
-border: 1px solid rgb(88, 135, 255);
+button {
+  padding: 2px 17px;
+  border: 1px solid rgb(88, 135, 255);
+}
+
+.disabled-row {
+  background-color: grey !important;
 }

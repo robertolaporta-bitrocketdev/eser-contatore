@@ -6,7 +6,7 @@ import { SelectBool } from "./SelectBool";
 import { User } from "./User";
 
 export interface Data {
-  key?:number
+  key?: number;
   userId?: number;
   id: number;
   title: string;
@@ -47,9 +47,10 @@ export const DatiFetch: FC = (): JSX.Element => {
   ));
 
   return (
-    <><Link to="/fetchTable">
-    <button>Table</button>
-  </Link>
+    <>
+      <Link to="/fetchTable">
+        <button>Table</button>
+      </Link>
       <Link to="/preferiti">
         <button>Preferiti</button>
       </Link>
@@ -63,8 +64,6 @@ export const DatiFetch: FC = (): JSX.Element => {
 
       <SelectBool onChange={(e: any) => handleInput(e)} />
       {lista && <ul>{renderData}</ul>}
-
-     
     </>
   );
 };
