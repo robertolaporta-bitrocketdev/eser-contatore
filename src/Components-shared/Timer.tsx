@@ -8,5 +8,9 @@ export const Timer: FC = (): JSX.Element => {
     setSecond(second + 1);
   }, 1000);
 
-  return <h1>Timer: {moment().format("MMMM Do YYYY, h:mm:ss")}</h1>;
+  return (
+    <h1 style={{ color: "blue" }}>
+      Timer: {moment().format("MMMM Do YYYY, h:mm:ss")}
+    </h1>
+  );
 };

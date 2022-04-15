@@ -1,6 +1,5 @@
-import { Button, Table } from "antd";
 import { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FetchButton } from "./FetchButton";
 import { SelectBool } from "./SelectBool";
 import { User } from "./User";
@@ -61,8 +60,8 @@ export const DatiFetch: FC = (): JSX.Element => {
         }}
         disabled={lista ? true : false}
       />
-
       <SelectBool onChange={(e: any) => handleInput(e)} />
+
       {lista && <ul>{renderData}</ul>}
     </>
   );

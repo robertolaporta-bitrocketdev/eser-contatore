@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { Preferiti } from "./Components/Preferiti";
 import "./css/style.css";
 import { FetchTable } from "./Components-shared/FetchTable";
+import { Params } from "./Components-shared/Params";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/fetching" element={<DatiFetch />} />
         <Route path="/preferiti" element={<Preferiti />} />
         <Route path="/fetchTable" element={<FetchTable />} />
+        <Route path="/params" element={<Params />} />
+        <Route path="/params/:id" element={<Params />} />
       </Routes>
     </main>
   );
