@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { Button, Table } from "antd";
 import { Data } from "../../Components/DatiFetch";
 import { Link } from "react-router-dom";
@@ -103,7 +103,6 @@ export const FetchTable: FC = (): JSX.Element => {
         }}
         columns={columns}
         dataSource={data}
-        pagination={false}
       />
     </div>
   );
